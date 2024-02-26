@@ -1,0 +1,32 @@
+class Shape:
+    width = 0
+
+    def __init__(self, width):
+        self.width = width
+
+# Definisi kelas Square yang merupakan subclass dari Shape
+class Square(Shape):
+    name = "Square"
+
+    def get_area(self):
+        return self.width ** 2
+
+# Definisi kelas Triangle yang merupakan subclass dari Shape
+class Triangle(Shape):
+    name = "Triangle"
+    height = 0
+
+    def __init__(self, width, height):
+        super().__init__(width)  # Memanggil constructor dari kelas induk
+        self.height = height
+
+    def get_area(self):
+        return 0.5 * self.width * self.height
+
+# Membuat objek SquareX dan TriangleY
+square_x = Square(5)
+triangle_y = Triangle(5, 3)
+
+# Menampilkan luas SquareX dan TriangleY
+print(f"Luas {square_x.name}: {square_x.get_area()}")
+print(f"Luas {triangle_y.name}: {triangle_y.get_area()}")
